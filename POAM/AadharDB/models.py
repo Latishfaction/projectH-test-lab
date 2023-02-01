@@ -18,7 +18,7 @@ class aadhar(models.Model):
     gender = models.CharField(choices=gender,default=OTHERS,max_length=3)
     aadhar_no = models.BigIntegerField()
     address = models.TextField()
-    photo = models.ImageField(null=True)
+    photo = models.ImageField(upload_to ='uploads/',null=True)
 
     def __str__(self):
-        return f"Aadhar No : {self.aadhar_no} Name : {self.first_name + self.middle_name + self.last_name} DOB : {self.dob}"
+        return f"Aadhar No : {self.aadhar_no} DOB : {self.dob}"
